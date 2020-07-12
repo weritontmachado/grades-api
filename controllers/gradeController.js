@@ -84,7 +84,9 @@ const update = async (req, res) => {
 
   const id = req.params.id;
 
-  const data = await Grades.findByIdAndUpdate({ _id: id }, req.body);
+  const data = await Grades.findByIdAndUpdate({ _id: id }, req.body, {
+    new: true,
+  });
 
   try {
     if (!data) {
