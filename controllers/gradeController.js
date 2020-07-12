@@ -122,7 +122,7 @@ const remove = async (req, res) => {
 };
 
 const removeAll = async (req, res) => {
-  const data = await Grades.remove({});
+  const data = await Grades.deleteMany();
 
   try {
     if (!data) {
