@@ -45,8 +45,6 @@ const findAll = async (req, res) => {
     } else {
       res.send(data);
     }
-
-    res.send();
     logger.info(`GET /grade`);
   } catch (error) {
     res
@@ -59,7 +57,7 @@ const findAll = async (req, res) => {
 const findOne = async (req, res) => {
   const id = req.params.id;
 
-  const data = await Grades.find({ _id: id });
+  const data = await Grades.findById({ _id: id });
 
   try {
     if (!data) {
